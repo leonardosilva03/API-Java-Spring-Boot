@@ -14,4 +14,6 @@ import com.data.apidata.model.Customer;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     List<Customer> findByDocument(String document);
+
+    List<Customer> deleteByDocument(String document);
 }

@@ -24,4 +24,12 @@ public class CustomerService {
     public List<Customer> getCustomersByDocument(String document) {
         return customerRepository.findByDocument(document);
     }
+    public List<Customer> deleteCustomerByDocument(String document) {
+        Customer existingCustomer = (Customer) customerRepository.findByDocument(document);
+
+        if (existingCustomer != null) {
+            customerRepository.delete(existingCustomer);
+        }
+        return null;
+    }
 }
